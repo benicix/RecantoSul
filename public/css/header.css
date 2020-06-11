@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+header li{
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+#menuLateral {
+    text-decoration: none;
+    list-style: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 15%;
+    background-color: #850000;
+    margin: 0;
+}
+.botoesHeaders{
+    width: 100%;
+    height: 50px;
+    background-color: #C20101;
+    font-size: medium;
+    color: #fff;
+}
+#tituloHeader{
+    display: flex;
+    justify-content: center;
+}
+.interno{
+    display: none;
+    background-color: #C20101;
+    border: none;
+    border-bottom: solid .4px #850000;
+    cursor: pointer;
+    font-size: small;
+}
+.interno:hover{
+    transition: .3s;
+    background-color: #990101;
+    font-size: medium;
+    
+}
+.principais{
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-self: center;
+    align-items: center;
+    border-bottom:solid 1px #000;
+
+}
+.principais:hover{
+    transition: all .3s linear;
+    background-color: #fff;
+    color: #000;
+}
+#menuLateral ul{
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: all 2s linear;
+}
+#menuLateral #caixa:checked ~ ul .Caixa{
+    
+    display: block;
+    transform: all;
+}
+#menuLateral #estoque:checked ~ ul .Estoque{
+    
+    display: block;
+    transform: all;
+}
+#menuLateral #conf:checked ~ ul .Conf{
+    
+    display: block;
+    transform: all;
+}

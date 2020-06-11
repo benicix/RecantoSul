@@ -1,0 +1,63 @@
+<%- include('./includes/header') %>
+
+<section id="conteudo">
+    <article id="articleSuperior">
+
+        <p id="labelSuperior">Inicio / Home</p>
+
+    </article>
+    <article id="telaCaixa">
+        <article id="articleBotoes">
+            <nav id="botoesSuperiores">
+                <button class="buttonMarmitex" onclick="registrar('marmitex', 12,'1')">Marmitex</button>
+                <button class="buttonMarmitex" onclick="registrar('marmitex2', 20,'1')">Marmitex</button>
+                <button class="buttonMarmitex">Marmitex</button>
+                <button class="buttonMarmitex">Marmitex</button>
+                <button class="buttonMarmitex">Marmitex</button>
+                <button class="buttonMarmitex">Marmitex</button>
+                <button class="buttonMarmitex">Marmitex</button>
+                <button class="buttonMarmitex">Marmitex</button>
+                <button class="buttonMarmitex">Marmitex</button>
+
+
+            </nav>
+
+        </article>
+        <article id="botoesInferiores">
+            <nav>
+                <button class="buttonNumeric" onclick="removerValor(10.00)">R$ 10,00</button>
+                <button class="buttonNumeric" onclick="removerValor(20.00)">R$ 20,00</button>
+                <button class="buttonNumeric" onclick="removerValor(50.00)">R$ 50,00</button>
+                <button class="buttonNumeric" onclick="removerValor(100.00)">R$ 100,00</button>
+                <input type="text" id="valorCompra" placeholder="Digitar Valor">
+                <button class="buttonNumeric" id="confirmarCompra">Confirmar</button>
+                
+                <input type="text" id="valorTotal" value="0" placeholder="Valor do Pedido" disabled>
+                <button class="buttonNumeric" id="confirmarCompra">Finalizar Venda</button>
+
+
+            </nav>
+        </article>
+        <article id="listagemItens">
+            <table id="tabelaItens">
+                <thead id="headTable">
+                    <tr id="tituloTable">
+                        <th>Nome</th>
+                        <th>Qtd</th>
+                        <th>Valor</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable">
+                    
+                    
+                    
+
+                </tbody>
+
+            </table>
+        </article>
+    </article>
+</section>
+
+<%- include('./includes/footer') %>
