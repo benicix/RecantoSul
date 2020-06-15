@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Coloque aqui o nome da aplicacao\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +16,16 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "ejs": "^3.1.2",
+    "electron": "^9.0.4",
+    "electron-builder": "^22.7.0",
+    "electron-packager": "^14.2.1",
     "express": "^4.17.1",
-    "mongoose": "^5.9.14"
+    "mariadb": "^2.4.0",
+    "mongoose": "^5.9.14",
+    "mysql": "^2.18.1",
+    "node": "^14.4.0",
+    "node-thermal-printer": "^4.1.2",
+    "nodejs": "0.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

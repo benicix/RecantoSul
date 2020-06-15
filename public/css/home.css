@@ -64,7 +64,7 @@ body{
     border-radius: 10px;
    
 }
-#valorCompra,#valorTotal{
+#valorCompra,#valorTotal,#cpf{
     height: 65px;
     width: 100%;
     background-color: #aaa;
@@ -72,8 +72,26 @@ body{
     margin-top: 4%;
     border-radius: 5px;
 }
-#confirmarCompra{
+#confirmarCompra,
+#confirmarCompraViagem{
     width: 63%;
+}
+#opcaoTamanho{
+    display: flex;
+    flex-direction: row;
+}
+.labelsTamanho{
+    
+    background-color: #850000;
+    color: white;
+    height: 50px;
+    justify-content: center;
+    margin:2%;
+    border-radius: 10px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #listagemItens{
     width: 40%;
@@ -119,3 +137,8 @@ body{
 .botaoExcluir:hover{
     cursor: pointer;
 }
+/*#botoesInferiores #pequeno:checked ~ #opcaoTamanho #labelPequena{
+    
+    background-color: #C20101;
+    border: solid yellow 1px;
+}*/

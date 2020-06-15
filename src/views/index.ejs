@@ -9,15 +9,25 @@
     <article id="telaCaixa">
         <article id="articleBotoes">
             <nav id="botoesSuperiores">
-                <button class="buttonMarmitex" onclick="registrar('marmitex', 12,'1')">Marmitex</button>
-                <button class="buttonMarmitex" onclick="registrar('marmitex2', 20,'1')">Marmitex</button>
-                <button class="buttonMarmitex">Marmitex</button>
-                <button class="buttonMarmitex">Marmitex</button>
-                <button class="buttonMarmitex">Marmitex</button>
-                <button class="buttonMarmitex">Marmitex</button>
-                <button class="buttonMarmitex">Marmitex</button>
-                <button class="buttonMarmitex">Marmitex</button>
-                <button class="buttonMarmitex">Marmitex</button>
+                <!--button class="buttonMarmitex" >Marmitex</button>
+                <button class="buttonMarmitex" onclick="registrar('marmitex2', 20,'1')">Marmitex</button-->
+                <% for (let index = 0; index < Pratos.length; index++) { %>
+                    <% Pratos[index].Prato = Pratos[index].Prato.replace("Seg", "") %>
+                    <% Pratos[index].Prato = Pratos[index].Prato.replace("Ter", "") %>
+                    <% Pratos[index].Prato = Pratos[index].Prato.replace("Qua", "") %>
+                    <% Pratos[index].Prato = Pratos[index].Prato.replace("Qui", "") %>
+                    <% Pratos[index].Prato = Pratos[index].Prato.replace("Sex", "") %>
+                    <% Pratos[index].Prato = Pratos[index].Prato.replace("Sab", "") %>
+                    
+
+                    <button class="buttonMarmitex" onclick="registrar('<%= Pratos[index].Prato %>', 12,'1')"><%= Pratos[index].Prato %> </button>
+                <% } %>
+                <!--button class="buttonMarmitex" onclick="registrar('File de Frango', 16,'1')">File de Frangod</button>
+                <button class="buttonMarmitex" onclick="registrar('marmitex G', 18,'1')">Marmitex G</button>
+                <button class="buttonMarmitex" onclick="registrar('Feijoada P', 20,'1')">Feijoada P</button>
+                <button class="buttonMarmitex" onclick="registrar('Feijoada M', 30,'1')">Feijoada M</button>
+                <button class="buttonMarmitex" onclick="registrar('Feijoada', 40,'1', 'Feijoada')">Feijoada</button>
+                <!--button class="buttonMarmitex">Marmitex </button-->
 
 
             </nav>
@@ -25,19 +35,32 @@
         </article>
         <article id="botoesInferiores">
             <nav>
-                <button class="buttonNumeric" onclick="removerValor(10.00)">R$ 10,00</button>
-                <button class="buttonNumeric" onclick="removerValor(20.00)">R$ 20,00</button>
-                <button class="buttonNumeric" onclick="removerValor(50.00)">R$ 50,00</button>
-                <button class="buttonNumeric" onclick="removerValor(100.00)">R$ 100,00</button>
+                <input type="checkbox" id="pequeno" style="display:none">
+                <input type="checkbox" id="medio" style="display:none">
+                <input type="checkbox" id="grande" style="display:none">
+                <article id="opcaoTamanho">
+                    <label class="labelsTamanho" id="labelPequena" onclick="ativarTamanho('pequeno', 'labelPequena')">
+                        Pequeno</label>
+                    <label class="labelsTamanho" id="labelMedia" onclick="ativarTamanho('medio','labelMedia')">
+                        Médio</label>
+                    <label class="labelsTamanho" id="labelGrande" onclick="ativarTamanho('grande','labelGrande')">
+                        grande</label>
+                </article>
                 <input type="text" id="valorCompra" placeholder="Digitar Valor">
                 <button class="buttonNumeric" id="confirmarCompra">Confirmar</button>
-                
+                <input type="text" id="cpf" placeholder="CPF/CNPJ">
+
+
                 <input type="text" id="valorTotal" value="0" placeholder="Valor do Pedido" disabled>
-                <button class="buttonNumeric" id="confirmarCompra">Finalizar Venda</button>
+                <button class="buttonNumeric" id="confirmarCompra" onclick="FinalizarCompra()">Finalizar Venda</button>
+                <button class="buttonNumeric" id="confirmarCompraViagem" onclick="FinalizarCompra('viagem')">Finalizar
+                    Venda (Entrega)</button>
 
 
             </nav>
         </article>
+
+
         <article id="listagemItens">
             <table id="tabelaItens">
                 <thead id="headTable">
@@ -48,15 +71,18 @@
                         <th>Opções</th>
                     </tr>
                 </thead>
-                <tbody id="bodyTable">
-                    
-                    
-                    
+                <form action="/" method="post" name="formulario" id="formulario">
+                    <tbody id="bodyTable">
 
-                </tbody>
+
+
+
+                    </tbody>
+                </form>
 
             </table>
         </article>
+
     </article>
 </section>
 
